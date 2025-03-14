@@ -25,7 +25,7 @@
             tap-ms = <20>;
         };
     };
-'';;
+    
 / {
     keymap {
         compatible = "zmk,keymap";
