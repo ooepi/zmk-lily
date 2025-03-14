@@ -11,7 +11,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include "zmk-helpers/unicode-chars/swedish.dtsi"
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
@@ -26,7 +25,7 @@
             tap-ms = <20>;
         };
     };
-
+'';;
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -41,8 +40,8 @@
 
             bindings = <
 &kp ESC           &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5                       &kp EN_N6  &kp EN_N7      &kp EN_N8      &kp EN_N9      &kp EN_N0         &kp BACKSPACE
-&kp TAB           &kp Q      &kp W      &kp F      &kp P      &kp B                           &kp J      &kp L          &kp U          &kp Y          &kp EN_SEMICOLON  &sv_oe
-&kp LEFT_SHIFT    &kp A      &kp R      &kp S      &kp T      &kp G                           &kp M      &kp N          &kp E          &kp I          &kp O             &sv_ae
+&kp TAB           &kp Q      &kp W      &kp F      &kp P      &kp B                           &kp J      &kp L          &kp U          &kp Y          &kp EN_SEMICOLON  &kp FI_O_UMLAUT
+&kp LEFT_SHIFT    &kp A      &kp R      &kp S      &kp T      &kp G                           &kp M      &kp N          &kp E          &kp I          &kp O             &kp FI_A_UMLAUT
 &kp LEFT_CONTROL  &kp Z      &kp X      &kp C      &kp D      &kp V      &tog 5    &tog 4     &kp K      &kp H          &kp EN_COMMA   &kp EN_PERIOD  &kp EN_SLASH      &kp ENTER
                                         &kp LALT   &kp LGUI   &mo 1      &mo 5     &kp SPACE  &mo 2      &kp LG(PG_UP)  &kp LG(PG_DN)
             >;
