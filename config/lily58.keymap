@@ -11,6 +11,21 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "zmk-helpers/unicode-chars/swedish.dtsi"
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
+
+    behaviors {
+        // Encoder to Mouse Scroll
+        scroll_up_down: Mouse_Scroller {
+            label = "Scroller As Mouse Wheel";
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <20>;
+        };
+    };
 
 / {
     keymap {
@@ -26,8 +41,8 @@
 
             bindings = <
 &kp ESC           &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5                       &kp EN_N6  &kp EN_N7      &kp EN_N8      &kp EN_N9      &kp EN_N0         &kp BACKSPACE
-&kp TAB           &kp Q      &kp W      &kp F      &kp P      &kp B                           &kp J      &kp L          &kp U          &kp Y          &kp EN_SEMICOLON  &kp FI_O_UMLAUT
-&kp LEFT_SHIFT    &kp A      &kp R      &kp S      &kp T      &kp G                           &kp M      &kp N          &kp E          &kp I          &kp O             &kp FI_A_UMLAUT
+&kp TAB           &kp Q      &kp W      &kp F      &kp P      &kp B                           &kp J      &kp L          &kp U          &kp Y          &kp EN_SEMICOLON  &sv_oe
+&kp LEFT_SHIFT    &kp A      &kp R      &kp S      &kp T      &kp G                           &kp M      &kp N          &kp E          &kp I          &kp O             &sv_ae
 &kp LEFT_CONTROL  &kp Z      &kp X      &kp C      &kp D      &kp V      &tog 5    &tog 4     &kp K      &kp H          &kp EN_COMMA   &kp EN_PERIOD  &kp EN_SLASH      &kp ENTER
                                         &kp LALT   &kp LGUI   &mo 1      &mo 5     &kp SPACE  &mo 2      &kp LG(PG_UP)  &kp LG(PG_DN)
             >;
@@ -51,7 +66,7 @@
                                                       &trans             &trans        &trans        &kp SPACE    &kp LA(SPACE)  &kp BACKSPACE      &kp LC(LEFT)  &kp LC(RIGHT)
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         Programming {

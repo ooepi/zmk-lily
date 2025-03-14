@@ -6,6 +6,8 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: zmk-locales
       url-base: https://github.com/joelspadin/
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -13,6 +15,9 @@ manifest:
       import: app/west.yml
     - name: zmk-locales
       remote: zmk-locales
+      revision: main
+    - name: zmk-helpers
+      remote: urob
       revision: main
   self:
     path: config
