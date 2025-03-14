@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <locale/keys_fi.h>
+#include <locale/keys_us_international.h>
 
 / {
     keymap {
@@ -23,11 +24,11 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                     &kp N6  &kp N7         &kp N8         &kp N9   &kp N0         &kp BACKSPACE
-&kp TAB           &kp Q   &kp W   &kp F     &kp P     &kp B                      &kp J   &kp L          &kp U          &kp Y    &kp SEMICOLON  &kp FI_O_UMLAUT
-&kp LEFT_SHIFT    &kp A   &kp R   &kp S     &kp T     &kp G                      &kp M   &kp N          &kp E          &kp I    &kp O          &kp FI_A_UMLAUT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp D     &kp V   &tog 5  &tog 4     &kp K   &kp H          &kp COMMA      &kp DOT  &kp FSLH       &kp ENTER
-                                  &kp LALT  &kp LGUI  &mo 1   &mo 5   &kp SPACE  &mo 2   &kp LG(PG_UP)  &kp LG(PG_DN)
+&kp ESC           &kp EN_N1     &kp EN_N2   &kp EN_N3   &kp EN_N4   &kp EN_N5                   &kp EN_N6   &kp EN_N7   &kp EN_N8       &kp EN_N9       &kp EN_N0           &kp BACKSPACE
+&kp TAB           &kp Q         &kp W       &kp F       &kp P       &kp B                       &kp J       &kp L       &kp U           &kp Y           &kp EN_SEMICOLON    &kp FI_O_UMLAUT
+&kp LEFT_SHIFT    &kp A         &kp R       &kp S       &kp T       &kp G                       &kp M       &kp N       &kp E           &kp I           &kp O               &kp FI_A_UMLAUT
+&kp LEFT_CONTROL  &kp Z         &kp X       &kp C       &kp D       &kp V       &tog 5  &tog 4  &kp K       &kp H       &kp EN_COMMA    &kp EN_PERIOD   &kp EN_SLASH        &kp ENTER
+                                &kp LALT    &kp LGUI    &mo 1       &mo 5                       &kp SPACE   &mo 2        &kp LG(PG_UP)  &kp LG(PG_DN)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -60,9 +61,9 @@
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
 &kp F1          &kp F1     &kp F2          &kp F3            &kp F4                &kp F5                           &kp F6     &kp F7                 &kp F8             &kp F9           &kp F10        &kp F11
-&kp TAB         &kp GRAVE  &kp TILDE       &trans            &trans                &kp LA(F4)                       &trans     &kp SLASH              &kp BACKSLASH      &kp PIPE         &kp UNDER      &kp MINUS
-&kp LEFT_SHIFT  &kp COLON  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &trans                           &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp SEMICOLON  &kp SQT
-&kp LCTRL       &trans     &trans          &trans            &trans                &trans          &tog 3  &kp F12  &kp PLUS   &kp MINUS              &kp EQUAL          &kp QUESTION     &trans         &kp DOUBLE_QUOTES
+&kp TAB         &kp GRAVE  &kp TILDE       &trans            &trans                &kp LA(F4)                       &trans     &kp EN_SLASH           &kp EN_BACKSLASH   &kp EN_PIPE      &kp EN_UNDER   &kp EN_MINUS
+&kp LEFT_SHIFT  &kp EN_COLON  &kp EN_LEFT_BRACE  &kp EN_LEFT_BRACKET  &kp EN_LEFT_PARENTHESIS  &trans                           &kp EN_EQUAL  &kp EN_RIGHT_PARENTHESIS  &kp EN_RIGHT_BRACKET  &kp EN_RIGHT_BRACE  &kp EN_SEMICOLON  &kp EN_SQT
+&kp LCTRL       &trans     &trans          &trans            &trans                &trans          &tog 3  &kp F12  &kp EN_PLUS   &kp EN_MINUS              &kp EN_EQUAL          &kp EN_QUESTION     &trans         &kp EN_DOUBLE_QUOTES
                                            &kp LEFT_ALT      &kp RC(BACKSPACE)     &kp LC(DELETE)  &trans  &trans   &trans     &trans                 &kp DELETE
             >;
 
