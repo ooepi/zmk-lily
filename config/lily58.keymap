@@ -15,7 +15,7 @@
 #include <zmk-helpers/key-labels/34.h>
 #include <zmk-helpers/unicode-chars/swedish.dtsi>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 200
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
 
 &mmv {
