@@ -15,12 +15,12 @@
 #include <zmk-helpers/key-labels/34.h>
 #include <zmk-helpers/unicode-chars/swedish.dtsi>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 300
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 200
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
 
 &mmv {
   acceleration-exponent = <1>;          // 1
-  time-to-max-speed-ms = <400>;         // 300
+  time-to-max-speed-ms = <500>;         // 300
   delay-ms = <0>;                       // 0
 };
 
