@@ -11,9 +11,16 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-//#include "zmk-helpers/unicode-chars/swedish.dtsi"
+#include <zmk-helpers/unicode-chars/swedish.dtsi>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 300
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+
+&mmv {
+  acceleration-exponent = <1>;          // 1
+  time-to-max-speed-ms = <500>;         // 300
+  delay-ms = <0>;                       // 0
+};
 
 / {
     behaviors {
@@ -22,7 +29,15 @@
             label = "Scroller As Mouse Wheel";
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
+
+        scroll_left_right: Mouse_Scroller_HZ {
+            label = "Scroller As Mouse Wheel";
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
             tap-ms = <20>;
         };
     };
@@ -40,8 +55,8 @@
 
             bindings = <
 &kp ESC           &kp EN_N1  &kp EN_N2  &kp EN_N3  &kp EN_N4  &kp EN_N5                       &kp EN_N6  &kp EN_N7      &kp EN_N8      &kp EN_N9      &kp EN_N0         &kp BACKSPACE
-&kp TAB           &kp Q      &kp W      &kp F      &kp P      &kp B                           &kp J      &kp L          &kp U          &kp Y          &kp EN_SEMICOLON  &kp FI_O_UMLAUT
-&kp LEFT_SHIFT    &kp A      &kp R      &kp S      &kp T      &kp G                           &kp M      &kp N          &kp E          &kp I          &kp O             &kp FI_A_UMLAUT
+&kp TAB           &kp Q      &kp W      &kp F      &kp P      &kp B                           &kp J      &kp L          &kp U          &kp Y          &kp EN_SEMICOLON  &sv_oe
+&kp LEFT_SHIFT    &kp A      &kp R      &kp S      &kp T      &kp G                           &kp M      &kp N          &kp E          &kp I          &kp O             &sv_ae
 &kp LEFT_CONTROL  &kp Z      &kp X      &kp C      &kp D      &kp V      &tog 5    &tog 4     &kp K      &kp H          &kp EN_COMMA   &kp EN_PERIOD  &kp EN_SLASH      &kp ENTER
                                         &kp LALT   &kp LGUI   &mo 1      &mo 5     &kp SPACE  &mo 2      &kp LG(PG_UP)  &kp LG(PG_DN)
             >;
@@ -84,7 +99,7 @@
                                                  &kp LEFT_ALT         &kp RC(BACKSPACE)        &kp LC(DELETE)  &trans    &trans   &trans        &trans                    &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&scroll_left_right>;
         };
 
         Qwerty {
@@ -120,7 +135,7 @@
                           &trans    &mkp MB4  &mkp MB5  &trans    &mkp MB1  &mkp MB3  &mkp MB2        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
