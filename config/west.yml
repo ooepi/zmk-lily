@@ -1,23 +1,30 @@
 manifest:
   remotes:
+      # zmk
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
-    - name: zmk-locales
-      url-base: https://github.com/joelspadin/
+      # zmk-helpers
     - name: urob
       url-base: https://github.com/urob
+      # zmk-nice-oled
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
+      # zmk - the main firmware
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-locales
-      remote: zmk-locales
-      revision: main
+      # zmk helpers - for language stuff
     - name: zmk-helpers
       remote: urob
       revision: main
+      # zmk-nice-oled - for OLED display
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
   self:
     path: config
+
+    # Additional modules containing boards/shields/custom code can be listed here as well
+    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
