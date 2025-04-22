@@ -7,8 +7,8 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
       # zmk-nice-oled
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    # - name: mctechnology17
+    #   url-base: https://github.com/mctechnology17
   projects:
       # zmk - the main firmware
     - name: zmk
@@ -20,9 +20,9 @@ manifest:
       remote: urob
       revision: main
       # zmk-nice-oled - for OLED display
-    - name: zmk-nice-oled
-      remote: mctechnology17
-      revision: main
+    # - name: zmk-nice-oled
+    #   remote: mctechnology17
+    #   revision: main
   self:
     path: config
 
