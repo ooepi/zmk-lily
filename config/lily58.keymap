@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <zmk-helpers/helper.h>
 #include <zmk-helpers/key-labels/34.h>
-#include <zmk-helpers/unicode-chars/swedish.dtsi>
+#include <behaviors/unicode.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400
@@ -46,16 +46,16 @@
 
         base {
             display-name = "BASE";
-            // | ESC   | 1 | 2 | 3   | 4   | 5   |                    | 6    | 7         | 8         | 9 | 0 | BSPC  |
-            // | TAB   | Q | W | F   | P   | B   |                    | J    | L         | U         | Y | R | SV_OE |
-            // | SHIFT | A | R | S   | T   | G   |                    | M    | N         | E         | I | O | SV_AE |
-            // | CTRL  | Z | X | C   | D   | V   | TOG MOUS | TOG NUM | K    | H         | ,         | . | / | ENTER |
+            // | ESC   | 1 | 2 | 3   | 4   | 5   |                    | 6    | 7         | 8         | 9 | 0 | BSPC        |
+            // | TAB   | Q | W | F   | P   | B   |                    | J    | L         | U         | Y | ; | UC UC_SV_OE |
+            // | SHIFT | A | R | S   | T   | G   |                    | M    | N         | E         | I | O | UC UC_SV_AE |
+            // | CTRL  | Z | X | C   | D   | V   | TOG MOUS | TOG NUM | K    | H         | ,         | . | / | ENTER       |
             //                 | ALT | GUI | NAV | MOUS     | SPC     | PROG | LG(PG_UP) | LG(PG_DN) |
             bindings = <
-                &kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                     &kp N6  &kp N7         &kp N8         &kp N9      &kp N0     &kp BACKSPACE
-                &kp TAB           &kp Q   &kp W   &kp F     &kp P     &kp B                      &kp J   &kp L          &kp U          &kp Y       &kp R      &sv_oe
-                &kp LEFT_SHIFT    &kp A   &kp R   &kp S     &kp T     &kp G                      &kp M   &kp N          &kp E          &kp I       &kp O      &sv_ae
-                &kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp D     &kp V   &tog 5  &tog 4     &kp K   &kp H          &kp COMMA      &kp PERIOD  &kp SLASH  &kp ENTER
+                &kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                     &kp N6  &kp N7         &kp N8         &kp N9      &kp N0         &kp BACKSPACE
+                &kp TAB           &kp Q   &kp W   &kp F     &kp P     &kp B                      &kp J   &kp L          &kp U          &kp Y       &kp SEMICOLON  &uc UC_SV_OE
+                &kp LEFT_SHIFT    &kp A   &kp R   &kp S     &kp T     &kp G                      &kp M   &kp N          &kp E          &kp I       &kp O          &uc UC_SV_AE
+                &kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp D     &kp V   &tog 5  &tog 4     &kp K   &kp H          &kp COMMA      &kp PERIOD  &kp SLASH      &kp ENTER
                                                   &kp LALT  &kp LGUI  &mo 1   &mo 5   &kp SPACE  &mo 2   &kp LG(PG_UP)  &kp LG(PG_DN)
             >;
 
