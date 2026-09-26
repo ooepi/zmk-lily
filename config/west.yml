@@ -13,12 +13,12 @@ manifest:
       # zmk - the main firmware
     - name: zmk
       remote: zmkfirmware
-      revision: v0.2
+      revision: v0.3
       import: app/west.yml
       # zmk helpers - for language stuff
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: v0.3
       # zmk-nice-oled - for OLED display
     # - name: zmk-nice-oled
     #   remote: mctechnology17
