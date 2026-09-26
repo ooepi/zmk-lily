@@ -19,6 +19,10 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: v0.3
+      # zmk-unicode - types ä/ö/å via WinCompose
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3
       # zmk-nice-oled - for OLED display
     # - name: zmk-nice-oled
     #   remote: mctechnology17
