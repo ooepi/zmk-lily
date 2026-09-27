@@ -59,7 +59,7 @@
                                                   &kp LALT  &kp LGUI  &mo 1   &mo 5   &kp SPACE  &mo 2   &kp LG(PG_UP)  &kp LG(PG_DN)
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         navigation {

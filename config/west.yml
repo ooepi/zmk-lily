@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: m165437
+      url-base: https://github.com/M165437
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,5 +17,8 @@ manifest:
     - name: zmk-unicode
       remote: urob
       revision: v0.3
+    - name: nice-view-gem
+      remote: m165437
+      revision: v0.3.0
   self:
     path: config
