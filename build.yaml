@@ -1,6 +1,8 @@
 ---
 include:
+  # Main half: drives the nice!view with the custom nice_view_lily screen.
   - board: nice_nano_v2
-    shield: lily58_left nice_view_adapter nice_view_gem
+    shield: lily58_left nice_view_adapter nice_view_lily
+  # Other half: no screen.
   - board: nice_nano_v2
-    shield: lily58_right nice_view_adapter nice_view_gem
+    shield: lily58_right
